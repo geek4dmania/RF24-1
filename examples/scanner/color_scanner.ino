@@ -1,7 +1,7 @@
 /*
  Copyright (C) 2011 J. Coliz <maniacbug@ymail.com>
 
- Modified by Pedro Valverde <geek@4dmania.com> 31/12/2017-12 to
+ Modified by Pedro Valverde <geek@4dmania.com> 31/12/2017 to
  support ansi escape color codes and provide an enhanced visual
  interface through a serial terminal that support 16 color modes
  like Atom IDE or Putty
