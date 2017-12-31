@@ -27,19 +27,19 @@
 #include "RF24.h"
 #include "printf.h"
 
-#define ESC_COLOR_FG(fg)				"\x1b[" fg "m"
-#define ESC_COLOR_BG(bg)				"\x1b[" bg "m"
-#define ESC_COLOR(fg, bg)				"\x1b[" fg ";" bg "m"
-#define ESC_COLOR_RESET					"\x1b[0m"
+#define ESC_COLOR_FG(fg)			"\x1b[" fg "m"
+#define ESC_COLOR_BG(bg)			"\x1b[" bg "m"
+#define ESC_COLOR(fg, bg)			"\x1b[" fg ";" bg "m"
+#define ESC_COLOR_RESET				"\x1b[0m"
 
-#define ESC_COLOR_FG_BLACK				"30"
-#define ESC_COLOR_FG_RED				"31"
-#define ESC_COLOR_FG_GREEN				"32"
-#define ESC_COLOR_FG_YELLOW				"33"
-#define ESC_COLOR_FG_BLUE				"34"
+#define ESC_COLOR_FG_BLACK			"30"
+#define ESC_COLOR_FG_RED			"31"
+#define ESC_COLOR_FG_GREEN			"32"
+#define ESC_COLOR_FG_YELLOW			"33"
+#define ESC_COLOR_FG_BLUE			"34"
 #define ESC_COLOR_FG_MAGENTA			"35"
-#define ESC_COLOR_FG_CYAN				"36"
-#define ESC_COLOR_FG_WHITE				"37"
+#define ESC_COLOR_FG_CYAN			"36"
+#define ESC_COLOR_FG_WHITE			"37"
 #define ESC_COLOR_FG_BRIGHT_BLACK		"90"
 #define ESC_COLOR_FG_BRIGHT_RED			"91"
 #define ESC_COLOR_FG_BRIGHT_GREEN		"92"
@@ -49,14 +49,14 @@
 #define ESC_COLOR_FG_BRIGHT_CYAN		"96"
 #define ESC_COLOR_FG_BRIGHT_WHITE		"97"
 
-#define ESC_COLOR_BG_BLACK				"40"
-#define ESC_COLOR_BG_RED				"41"
-#define ESC_COLOR_BG_GREEN				"42"
-#define ESC_COLOR_BG_YELLOW				"43"
-#define ESC_COLOR_BG_BLUE				"44"
+#define ESC_COLOR_BG_BLACK			"40"
+#define ESC_COLOR_BG_RED			"41"
+#define ESC_COLOR_BG_GREEN			"42"
+#define ESC_COLOR_BG_YELLOW			"43"
+#define ESC_COLOR_BG_BLUE			"44"
 #define ESC_COLOR_BG_MAGENTA			"45"
-#define ESC_COLOR_BG_CYAN				"46"
-#define ESC_COLOR_BG_WHITE				"47"
+#define ESC_COLOR_BG_CYAN			"46"
+#define ESC_COLOR_BG_WHITE			"47"
 #define ESC_COLOR_BG_BRIGHT_BLACK		"100"
 #define ESC_COLOR_BG_BRIGHT_RED			"101"
 #define ESC_COLOR_BG_BRIGHT_GREEN		"102"
@@ -66,9 +66,9 @@
 #define ESC_COLOR_BG_BRIGHT_CYAN		"106"
 #define ESC_COLOR_BG_BRIGHT_WHITE		"107"
 
-#define RF24_CE_PIN					9
+#define RF24_CE_PIN				9
 #define RF24_CSN_PIN				10
-#define RF24_MAX_CHANNELS			127
+#define RF24_MAX_CHANNELS			126
 
 RF24 radio(RF24_CE_PIN, RF24_CSN_PIN);
 
@@ -81,7 +81,7 @@ void setup()
 	radio.begin();
 	radio.setAutoAck(false);
 	radio.startListening();
-    radio.stopListening();
+	radio.stopListening();
 
 	printf("Freq Range: 2.400GHz - 2.526GHz\r\n", 400 + radio.getChannel());
 	printf("Model: nRF24L01"); if (radio.isPVariant()) printf("+"); printf("\r\n");
